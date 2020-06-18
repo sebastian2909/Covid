@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+      body {
+        scrollbar-color: yellow #800080;
+        scrollbar-width: 10px;
+      }
+    </style>
+    <title>Covid-19</title>
+  </head>
+  <body>
+    <div>
+      <div class="jumbotron" style="background-color: white;">
+        <h1 class="display-4">Datos del Covid-19</h1>
+        <p class="lead">
+          Por medio de esta pagina podras conocer los datos de
+          <b>COVID-19</b> en los diferentes paises.
+        </p>
+        <form>
+          <div class="form-row">
+            <div class="col-4">
+              <select id="pais" class="form-control"></select>
+            </div>
+            <div class="col-2">
+              <button type="button" id="enviar" class="btn btn-outline-dark">Consultar</button>
+            </div>
+          </div>
+        </form>
+        <hr class="my-4" />
+        <div id="datos"></div>
+      </div>
+    </div>
+  </body>
+</html>
