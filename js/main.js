@@ -29,13 +29,24 @@ $(document).ready(function () {
       .then((response) => response.json())
       .then((data) => {
         datos.innerHTML = "";
+        if (data.response[dato].cases.new > 0) {
+          var x = `<span class="float-right">Nuevos: ${data.response[dato].cases.new}</span>`;
+        } else {
+          var x = "";
+        }
+        if (data.response[dato].deaths.new > 0) {
+          var y = `<span class="float-right">Nuevos: ${data.response[dato].deaths.new}</span>`;
+        }
+        else {
+          var y = "";
+        }
         datos.innerHTML += `
             <h1 class="display-8">${data.response[dato].country}</h1><br>
             <div class="row">
               <div class="col-sm-6">
                 <div class="card border-info mb-3">
                   <div class="card-body text-info">
-                    <h5 class="card-title">Casos Confirmados<span class="float-right">Nuevos: ${data.response[dato].cases.new}</span></h5>
+                    <h5 class="card-title">Casos Confirmados ${x}</h5>
                     <p class="card-text">${data.response[dato].cases.total}</p>
                   </div>
                 </div>
@@ -61,7 +72,7 @@ $(document).ready(function () {
               <div class="col-sm-6">
                 <div class="card border-dark mb-3">
                   <div class="card-body text-dark">
-                    <h5 class="card-title">Personas Fallecidas<span class="float-right">Nuevos: ${data.response[dato].deaths.new}</span></h5>
+                    <h5 class="card-title">Personas Fallecidas ${y}</h5>
                     <p class="card-text">${data.response[dato].deaths.total}</p>
                   </div>
                 </div>
